@@ -14,3 +14,9 @@ The user will see the following items.
 Installs:
 - React
 - React-DOM
+
+Process:
+
+App.jsx - Main file.
+App.css & index.css - Wiped.
+ai-container - Created, will be the main communication container.

@@ -1,0 +1,59 @@
+.outsideAiContainer {
+    background-color: #237DD0;
+    width: 45%;
+    height: 800px;
+    display: flex;
+    position: absolute;
+    right: 28%;
+    top: 8%;
+}
+
+.interviewWrapper { 
+    background-color: white;
+    display: flex;
+    position: absolute;
+    width: 80%;
+    height: 90%;
+    right: 10%;
+    top: 5%;
+}
+
+.jobTitleInput {
+    display: flex;
+    position: absolute;
+    width: 75%;
+    height: 8%;
+    right: 11%;
+    top: 5%;
+}
+
+.jobTitleInput::placeholder {
+    color: ;
+}
+
+.mainChatContainer {
+    display: flex;
+    position: absolute;
+    top: 15%;
+    right: 11%;
+    width: 75%;
+    height: 60%;
+}
+
+.chatBox {
+    display: flex;
+    position: absolute;
+    top: 77%;
+    right: 11%;
+    width: 75%;
+    height: 8%;
+}
+
+.submitButton {
+    display: flex;
+    position: absolute;
+    width: 25%;
+    height: 5%;
+    top: 86%;
+    right: 11%;
+}
