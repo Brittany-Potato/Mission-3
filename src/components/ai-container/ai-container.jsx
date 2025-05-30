@@ -1,51 +1,34 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ai-container.module.css";
 
-function backEnd() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:3000/ai`)
-      .then((res) => {
-        setMessage(res.data.message);
-      })
-      .catch((err) => {
-        console.error("Error fetching data:", err);
-      });
-  }, []);
-}
-
 export default function aicontainer() {
   const [message, setMessage] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [submittedValue, setSubmittedValue] = useState("");
   const [inputText, setInputText] = useState("");
+  const [response, setResponse] = useState("");
 
+  //* ----------Connecting to the backend
 
-  //* Connecting to the backend
-  function backEnd() {
-    useEffect(() => {
-      axios
-        .get(`http://localhost:3000/ai`)
-        .then((res) => {
-          setMessage(res.data.message);
-        })
-        .catch((err) => {
-          console.error("Error fetching data:", err);
-        });
-    }, []);
-  }
+  // try {
+  //   const res = await axios.post('http://localhost:3000/ai', {inputText});
+  //   setResponse(res.data.message);
+  // } catch(err) {
+  //   console.log('Error sending data', err);
+  //   setResponse('Error submitting data');
+  // }
 
-  //* Handles the submit button and sends data to the textarea
+  //* ------------Handles the submit button and sends data to the textarea
   const handleSubmit = (e) => {
     e.preventDefault();
-    setInputValue(setInputText)
-    console.log("Submitted")
+    setInputValue(setInputText);
+    console.log(res.data.message);
+    // Showing the submit buttons connected and responding
+    console.log("Submitted ~~ Submit buttons working");
   };
 
   return (
-    // ~~~~~~~~~~| Outside container |~~~~~~~~~~~~~
+    //* ~~~~~~~~~~| Outside container |~~~~~~~~~~~~~
     <div className={styles.outsideAiContainer}>
       {/* ~~~~~~~~~~~~| Interview Wrapper |~~~~~~~~~~~~~~~ */}
       <div className={styles.interviewWrapper}>
