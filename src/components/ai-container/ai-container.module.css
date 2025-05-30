@@ -25,6 +25,7 @@
   height: 8%;
   right: 11%;
   top: 5%;
+  border: #CDC9C8 solid 1px;
 }
 
 .jobTitleInput::placeholder {
@@ -37,6 +38,7 @@
   right: 11%;
   width: 75%;
   height: 60%;
+  border: #CDC9C8 solid 1px;
 }
 
 .chatBox {
@@ -46,6 +48,7 @@
   right: 11%;
   width: 75%;
   height: 8%;
+  border: #CDC9C8 solid 1px;
 }
 
 .submitButton {
@@ -61,5 +64,5 @@
   justify-content: center;
   align-items: center;
   background-color: #33B221;
-  border: grey 0.5px solid;
+  border: #CDC9C8 solid 1px;
 }

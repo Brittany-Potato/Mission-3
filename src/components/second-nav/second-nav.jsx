@@ -9,7 +9,7 @@ export default function secondNav() {
       <nav>
         <ul className={styles.searchMenu}>
           <li className={styles.searchSubMenu}>
-            <h3>Search</h3>
+            <h3>Search</h3><i class="fas fa-chevron-down" className={styles.symbol}></i>
             <ul className={styles.searchMenuItems}>
               <li className={styles.searchSubMenuOne}>
                 <a href="https://www.turners.co.nz/Cars/how-to-buy/" className={styles.searchSubMenuList}>
