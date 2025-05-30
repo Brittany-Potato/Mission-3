@@ -1,5 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ai-container.module.css";
+
+function App(){
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    axios.get(``)
+  })
+}
 
 export default function aicontainer() {
   return (
