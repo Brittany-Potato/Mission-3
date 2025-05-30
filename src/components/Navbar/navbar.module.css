@@ -10,6 +10,10 @@
   left: 15%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .logo {
   background-color: white;
   display: flex;
@@ -17,10 +21,11 @@
   left: 1%;
   height: 85px;
   width: 300px;
-    left: 16%;
+  left: 16%;
 }
 
 .navlinks {
+    text-decoration: none;
   background-color: white;
   display: flex;
   margin-left: 70%;
@@ -33,23 +38,45 @@
 .contact {
   color: #304149;
   font-size: 15px;
+  position: absolute;
+  right: 10%;
+  top: 40%;
 }
 
 .findus {
   color: #304149;
   font-size: 15px;
+  position: absolute;
+  right: 4%;
+  top: 40%;
 }
 
 .or {
   font-style: italic;
   color: #304149;
   font-size: 13px;
+  position: absolute;
+  right: 23.5%;
+  top: 57%;
 }
 
-.login,
 .register {
   color: #0073cf;
   font-size: 15px;
+  position: absolute;
+  right: 19%;
+  top: 56%;
+  text-decoration: none;
+}
+
+.login {
+  color: #0073cf;
+  font-size: 15px;
+  position: absolute;
+  right: 25%;
+  top: 56%;
+  text-decoration: none;
+  
 }
 
 @media only screen and (max-width: 1602px) {
@@ -62,11 +89,13 @@
   .findus {
     font-size: 90%;
     margin-top: 5%;
+    text-decoration: none;
   }
 
   .login,
   .register {
     font-size: 80%;
+    text-decoration: none;
   }
 }
 
@@ -79,19 +108,22 @@
   .contact,
   .findus {
     font-size: 80%;
+    text-decoration: none;
   }
 
   .login,
   .register {
     font-size: 70%;
+    text-decoration: none;
   }
+  
   .or {
     font-size: 60%;
   }
 }
 
 @media only screen and (max-width: 1040px) {
-    .contact,
+  .contact,
   .findus {
     font-size: 70%;
     margin-top: 10%;
@@ -108,5 +140,4 @@
 
 /* Make a hamburger menu */
 @media only screen and (max-width: 1040px) {
-  
 }

@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import styles from './App.module.css'
 import Aicontainer from "./components/ai-container/ai-container";
 import Navbar from "./components/Navbar/navbar";
-import backContainer from './components/back-container/back-container'
+import SecondNavbar from './components/second-nav/second-nav'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,8 +12,8 @@ function App() {
   return (
     <div className={styles.backContainer}>
       <Navbar />
+      <SecondNavbar />
       <Aicontainer />
-      <backContainer/>
     </div>
   );
 }

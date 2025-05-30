@@ -1,0 +1,143 @@
+.mainContainer {
+  display: flex;
+  position: absolute;
+  background-color: #1d6bcb;
+  width: 100%;
+  height: 7%;
+  top: 10%;
+  left: 0%;
+  z-index: 10;
+}
+
+
+/* ----------Search Menu List---------- */
+
+.searchMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  width: 10%;
+  position: absolute;
+  left: 17%;
+  color: white;
+}
+
+.searchSubMenu {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  margin-top: 0%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right: 0%;
+  
+}
+
+.searchSubMenuList {
+    display: flex;
+    padding: 7px;
+    border-bottom: #F0EFEE 2px solid;
+}
+
+.searchMenuItems {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  margin-top: 3%;
+  background-color: orange;
+  display: none;
+  width: 100%;
+}
+
+.searchSubMenuOne {
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  margin-top: 1%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right: 0%;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px grey;
+
+}
+
+.searchSubMenu:hover .searchMenuItems {
+  display: block;
+  display: flex;
+  position: absolute;
+  background-color: white;
+  transition-delay: 2s;
+}
+
+/* ---------- How to Buy List---------- */
+
+.buyMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  width: 10%;
+  position: absolute;
+  left: 23%;
+  color: white;
+}
+
+.buySubMenu {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  margin-top: 0%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right: 0%;
+  
+}
+
+.buySubMenuList {
+    display: flex;
+    padding: 7px;
+    border-bottom: #F0EFEE 2px solid;
+}
+
+.buyMenuItems {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  margin-top: 3%;
+  background-color: orange;
+  display: none;
+  width: 100%;
+}
+
+.buySubMenuOne {
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  margin-top: 1%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right: 0%;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px grey;
+
+}
+
+.buySubMenu:hover .buyMenuItems {
+  display: block;
+  display: flex;
+  position: absolute;
+  background-color: white;
+  transition-delay: 2s;
+}

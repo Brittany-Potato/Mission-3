@@ -51,8 +51,15 @@
 .submitButton {
   display: flex;
   position: absolute;
-  width: 25%;
-  height: 5%;
+  width: 16%;
+  height: 6%;
   top: 86%;
   right: 11%;
+  border-radius: 10px 10px 10px 10px;
+  font-size: 17px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: #33B221;
+  border: grey 0.5px solid;
 }
