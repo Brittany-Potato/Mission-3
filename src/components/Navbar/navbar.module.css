@@ -3,10 +3,11 @@
   display: flex;
   position: fixed;
   top: 0%;
-  width: 100%;
+  width: 70%;
   height: 10%;
   left: 0%;
-  border: #0073cf solid 2px;
+  /* border: #0073cf solid 2px; */
+  left: 15%;
 }
 
 .logo {
@@ -16,6 +17,7 @@
   left: 1%;
   height: 85px;
   width: 300px;
+    left: 16%;
 }
 
 .navlinks {
