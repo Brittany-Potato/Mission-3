@@ -37,6 +37,7 @@ export default function aicontainer() {
             type="text"
             className={styles.jobTitleInput}
             placeholder="Job Application Position"
+            onChangeCapture={(e) => setInputValue(e.target.value)}
           />
 
           <textarea
