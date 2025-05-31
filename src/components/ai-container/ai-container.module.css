@@ -21,11 +21,28 @@
 .jobTitleInput {
   display: flex;
   position: absolute;
-  width: 75%;
+  width: 35%;
   height: 8%;
   right: 11%;
   top: 5%;
-  border: #CDC9C8 solid 1px;
+  border: #cdc9c8 solid 1px;
+}
+
+.userSessionIdInput {
+  display: flex;
+  position: absolute;
+  width: 15%;
+  height: 4%;
+  right: 71%;
+  top: 9%;
+  border: #cdc9c8 solid 1px;
+}
+
+.currentID {
+  display: flex;
+  position: absolute;
+  bottom: 9%;
+  right: 79%;
 }
 
 .jobTitleInput::placeholder {
@@ -38,7 +55,7 @@
   right: 11%;
   width: 75%;
   height: 60%;
-  border: #CDC9C8 solid 1px;
+  border: #cdc9c8 solid 1px;
 }
 
 .chatBox {
@@ -48,7 +65,7 @@
   right: 11%;
   width: 75%;
   height: 8%;
-  border: #CDC9C8 solid 1px;
+  border: #cdc9c8 solid 1px;
 }
 
 .submitButton {
@@ -63,6 +80,23 @@
   color: white;
   justify-content: center;
   align-items: center;
-  background-color: #33B221;
-  border: #CDC9C8 solid 1px;
+  background-color: #33b221;
+  border: #cdc9c8 solid 1px;
+}
+
+.sessionIdSubmitButton {
+  display: flex;
+  position: absolute;
+  width: 15%;
+  height: 5%;
+  top: 9%;
+  right: 55%;
+  border-radius: 10px 10px 10px 10px;
+  font-size: 17px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: #33b221;
+  border: #cdc9c8 solid 1px;
+  font-size: 12px;
 }

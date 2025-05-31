@@ -40,6 +40,13 @@ export default function aicontainer() {
             onChangeCapture={(e) => setInputValue(e.target.value)}
           />
 
+          <input
+            type="text"
+            className={styles.userSessionIdInput}
+            placeholder="Previous Session ID"
+            onChangeCapture={(e) => setInputValue(e.target.value)}
+          />
+
           <textarea
             name="mainChatContainer"
             className={styles.mainChatContainer}
@@ -48,6 +55,7 @@ export default function aicontainer() {
             readOnly
             rows={5}
             cols={40}
+            placeholder="To resume your session put your session ID in the Session ID input box.. To start a new session leave the session ID blank"
           ></textarea>
 
           <input
@@ -63,6 +71,8 @@ export default function aicontainer() {
             Submit Response
           </button>
         </form>
+        <p className={styles.currentID}>Session ID: </p>
+        <button className={styles.sessionIdSubmitButton} type="submit">Start Session</button>
       </div>
     </div>
   );

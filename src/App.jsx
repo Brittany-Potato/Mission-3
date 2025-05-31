@@ -5,6 +5,7 @@ import styles from './App.module.css'
 import Aicontainer from "./components/ai-container/ai-container";
 import Navbar from "./components/Navbar/navbar";
 import SecondNavbar from './components/second-nav/second-nav'
+import Footer from './components/footer/footer'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <SecondNavbar />
       <Aicontainer />
+      <Footer/>
     </div>
   );
 }
