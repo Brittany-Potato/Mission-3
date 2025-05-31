@@ -9,7 +9,6 @@
   z-index: 10;
 }
 
-
 /* ----------Search Menu List---------- */
 
 .searchMenu {
@@ -29,28 +28,29 @@
   cursor: pointer;
   background-color: transparent;
   margin-top: 0%;
-  width: 100%;
+  width: 50%;
   position: absolute;
   justify-content: center;
   align-items: center;
-  right: 0%;
-  
+  right: 50%;
+  padding-left: 8px;
 }
 
 .searchSubMenuList {
-    display: flex;
-    padding: 7px;
-    border-bottom: #F0EFEE 2px solid;
+  display: flex;
+  padding: 7px;
+  border-bottom: #f0efee 2px solid;
 }
 
 .searchMenuItems {
   list-style: none;
   position: absolute;
   top: 100%;
-  margin-top: 3%;
+  margin-top: 1%;
   background-color: orange;
   display: none;
   width: 100%;
+  left: 21%;
 }
 
 .searchSubMenuOne {
@@ -68,9 +68,11 @@
 }
 
 .symbol {
-    position: absolute;
-    top: 0%;
-    right: ;
+  position: absolute;
+  top: 35%;
+  right: 20%;
+  color: white;
+  z-index: 70%;
 }
 
 .searchSubMenu:hover .searchMenuItems {
@@ -81,6 +83,10 @@
   transition-delay: 2s;
 }
 
+.searchSubMenu:hover {
+  background-color: #383e3e;
+}
+
 /* ---------- How to Buy List---------- */
 
 .buyMenu {
@@ -89,10 +95,18 @@
   padding: 0;
   display: flex;
   gap: 20px;
-  width: 10%;
+  width: 7%;
   position: absolute;
   left: 23%;
   color: white;
+}
+
+.symbolBuy {
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  color: white;
+  z-index: 70%;
 }
 
 .buySubMenu {
@@ -105,23 +119,24 @@
   justify-content: center;
   align-items: center;
   right: 0%;
-  
+  padding-left: 9px;
 }
 
 .buySubMenuList {
-    display: flex;
-    padding: 7px;
-    border-bottom: #F0EFEE 2px solid;
+  display: flex;
+  padding: 7px;
+  border-bottom: #f0efee 2px solid;
 }
 
 .buyMenuItems {
   list-style: none;
   position: absolute;
   top: 100%;
-  margin-top: 3%;
+  margin-top: 1%;
   background-color: orange;
   display: none;
   width: 100%;
+  left: 15%;
 }
 
 .buySubMenuOne {
@@ -136,7 +151,6 @@
   right: 0%;
   padding: 10px;
   box-shadow: 0 0 10px 2px grey;
-
 }
 
 .buySubMenu:hover .buyMenuItems {
@@ -144,5 +158,246 @@
   display: flex;
   position: absolute;
   background-color: white;
+  transition-delay: 2s;
+}
+
+.buySubMenu:hover {
+  background-color: #383e3e;
+}
+
+/* ---------- How to Sell List---------- */
+
+.sellMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  width: 10%;
+  position: absolute;
+  left: 29%;
+  color: white;
+}
+
+.symbolSell {
+  position: absolute;
+  top: 35%;
+  right: 15%;
+  color: white;
+  z-index: 70%;
+}
+
+.sellSubMenu {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  margin-top: 0%;
+  width: 80%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right: 0%;
+  padding-left: 8px;
+}
+
+.sellSubMenuList {
+  display: flex;
+  padding: 7px;
+  border-bottom: #f0efee 2px solid;
+}
+
+.sellMenuItems {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  margin-top: 1%;
+  background-color: orange;
+  display: none;
+  width: 100%;
+  left: 13%;
+}
+
+.sellSubMenuOne {
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  margin-top: 1%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right: 0%;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px grey;
+}
+
+.sellSubMenu:hover .sellMenuItems {
+  display: block;
+  display: flex;
+  position: absolute;
+  background-color: white;
+  transition-delay: 2s;
+}
+
+.sellSubMenu:hover {
+  background-color: #383e3e;
+}
+
+/* ---------- Services and Information List---------- */
+
+.servicesMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  width: 13%;
+  position: absolute;
+  left: 71%;
+  color: white;
+}
+
+.symbolServices {
+  position: absolute;
+  top: 34%;
+  right: 8%;
+  color: white;
+  z-index: 70%;
+}
+
+.servicesSubMenu {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  margin-top: 0%;
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  padding-left: 8px;
+  justify-content: center;
+  align-items: center;
+  right: 0%;
+}
+
+.servicesSubMenuList {
+  display: flex;
+  padding: 7px;
+  border-bottom: #f0efee 2px solid;
+}
+
+.servicesMenuItems {
+  list-style: none;
+  position: absolute;
+  top: 95%;
+  margin-top: 1%;
+  right: 0;
+  background-color: orange;
+  display: none;
+  width: 100%;
+}
+
+.servicesSubMenuOne {
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  margin-top: 1%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right: 0%;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px grey;
+}
+
+.servicesSubMenu:hover .servicesMenuItems {
+  display: block;
+  display: flex;
+  position: absolute;
+  background-color: white;
+  transition-delay: 2s;
+}
+
+.servicesSubMenu:hover {
+  background-color: #383e3e;
+}
+
+/* ---------- Find a Car List---------- */
+
+.findMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  width: 6.5%;
+  position: absolute;
+  left: 39%;
+  color: white;
+}
+
+.symbolFind {
+  position: absolute;
+  top: 34%;
+  right: 8%;
+  color: white;
+  z-index: 70%;
+}
+
+.findSubMenu {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  margin-top: 0%;
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  padding-left: 8px;
+  justify-content: center;
+  align-items: center;
+  right: 0%;
+}
+
+.findSubMenuList {
+  display: flex;
+  padding: 7px;
+  border-bottom: #f0efee 2px solid;
+}
+
+.findMenuItems {
+  list-style: none;
+  position: absolute;
+  top: 95%;
+  margin-top: 1%;
+  right: 0;
+  background-color: orange;
+  display: none;
+  width: 100%;
+}
+
+.findSubMenuOne {
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  margin-top: 3%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  left: 24%;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px grey;
+}
+
+.findSubMenu:hover .findMenuItems {
+  display: block;
+  display: flex;
+  position: absolute;
+  background-color: white;
+  transition-delay: 10s;
+}
+
+.findSubMenu:hover {
+  background-color: #383e3e;
   transition-delay: 2s;
 }
