@@ -1,7 +1,7 @@
 .outsideAiContainer {
   background-color: white;
   width: 70%;
-  height: 900px;
+  height: 100%;
   display: flex;
   position: absolute;
   right: 15%;
@@ -12,9 +12,9 @@
   background-color: white;
   display: flex;
   position: absolute;
-  width: 85%;
-  height: 90%;
-  right: 7.5%;
+  width: 75%;
+  height: 60%;
+  right: 15%;
   top: 5%;
 }
 
