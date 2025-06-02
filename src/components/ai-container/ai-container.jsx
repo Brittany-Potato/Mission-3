@@ -51,12 +51,12 @@ export default function AiContainer() {
   // Starting new session, or continuing session
   const submitSessionId = async (e) => {
     e.preventDefault();
-    console.log(`sessionId set to ${sessionIdToLoad} ready to send to backend`);
+    
     setIsLoading(true);
     setError(null);
     // fetch to load existing session or create new one
     const sessionIdToLoad = sessionIdInput.trim();
-
+    console.log(`sessionId set to ${sessionIdToLoad} ready to send to backend`);
     // if there's an old session to load will fetch, if not fetch to start a new session
     try {
       let response;
