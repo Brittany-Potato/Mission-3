@@ -3,11 +3,10 @@
   justify-content: space-between; /* Evenly space sections */
   align-items: start; /* Align headings at the top */
   padding: 20px;
-  background-color: #222; 
+  background-color:whitesmoke; 
   color: white;
   width: 100%;
 }
-
 
 .aTag {
   display: flex;
