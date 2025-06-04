@@ -4,36 +4,40 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 2rem;
-  background-color: whitesmoke;
-  color: black;
+  background-color: #f9f9f9;
+  color: #333;
   width: 100%;
-  gap: 1.5rem;
+  gap: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  border-top: 3px solid #0057B8; /* Turners blue line */
 }
 
 .footerColumn {
   flex: 1 1 200px;
   min-width: 180px;
-  padding: 10px;
 }
 
 .footerTitles {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
-  color: #333;
-  font-weight: bold;
+  color: #0057B8; /* Turners blue */
+  font-weight: 600;
   text-transform: uppercase;
+  border-bottom: 2px solid #E31B23; /* Turners red underline */
+  padding-bottom: 4px;
+  width: fit-content;
 }
 
 .aTag {
   display: block;
   margin-bottom: 0.5rem;
-  margin-left: 0;
-  color: #444;
+  color: #333;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .aTag:hover {
-  color: #007bff;
+  color: #E31B23; /* Turners red */
   text-decoration: underline;
 }
