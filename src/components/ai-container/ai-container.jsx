@@ -158,6 +158,7 @@ export default function AiContainer() {
     }
     finally {
       setIsLoading(false);
+      setUserMessageToChat("");
     }
   };
 
@@ -201,6 +202,7 @@ export default function AiContainer() {
             className={styles.chatBox}
             placeholder={activeSessionId ? "Write message here" : "Start  new Session First"}
             onChange={(e) => setUserMessageToChat(e.target.value)}
+            value = {userMessageToChat}
             disabled={isLoading || !activeSessionId}
           />
 
