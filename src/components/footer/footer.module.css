@@ -1,69 +1,39 @@
 .mainContainer {
   display: flex;
-  justify-content: space-between; /* Evenly space sections */
-  align-items: start; /* Align headings at the top */
-  padding: 20px;
-  background-color:whitesmoke; 
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: whitesmoke;
+  color: black;
   width: 100%;
+  gap: 1.5rem;
 }
 
-.aTag {
-  display: flex;
-  padding: 3px;
-  margin-left: 15%;
-  margin-top: 0%;
-}
-
-.footerTitles {
-  display: flex;
-padding-top: ;
-  margin-left: 15%;
-  margin-top: 13%;
-}
-
-.footer-column {
-  flex: 1; 
+.footerColumn {
+  flex: 1 1 200px;
+  min-width: 180px;
   padding: 10px;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~|Cars div|~~~~~~~~~~~~~~~~~~~~ */
-
-.carsDiv {
-  display: flex;
-  position: absolute;
-  width: 25%;
-  height: 80%;
-  left: 0%;
-  flex-direction: column;
+.footerTitles {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~|Finance and Insurance div|~~~~~~~~~~~~~~~~~~~~ */
-.financeAndInsuranceDiv {
-  display: flex;
-  position: absolute;
-  background-color: orange;
-  width: 25%;
-  height: 80%;
-  left: 25%;
+.aTag {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~|Search For div|~~~~~~~~~~~~~~~~~~~~ */
-.searchForDiv {
-  display: flex;
-  position: absolute;
-  right: 25%;
-  background-color: blue;
-  width: 25%;
-  height: 80%;
-}
-
-/* ~~~~~~~~~~~~~~~~~~~~|About Us div|~~~~~~~~~~~~~~~~~~~~ */
-.aboutUsDiv {
-  display: flex;
-  position: absolute;
-  background-color: green;
-  width: 25%;
-  height: 80%;
-  right: 0%;
+.aTag:hover {
+  color: #007bff;
+  text-decoration: underline;
 }
