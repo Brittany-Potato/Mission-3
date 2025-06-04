@@ -1,9 +1,13 @@
-/* App.module.css */
 .backContainer {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background-color: #f3f4f6; /* Turners light grey */
-    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Ensures content fills the page */
+  }
+  
+  .mainContent {
+    display: flex;
+    justify-content: center; /* Centers content */
+    align-items: center;
+    min-height: 80vh; /* Pushes the footer down */
   }
   

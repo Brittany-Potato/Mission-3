@@ -1,11 +1,11 @@
 .outsideAiContainer {
-  background-color: white;
-  width: 70%;
-  height: 100%;
   display: flex;
-  position: absolute;
-  right: 15%;
-  top: 10.4%;
+  justify-content: center; /* Centers it horizontally */
+  align-items: center; /* Centers it vertically */
+  margin: 0 auto; /* Helps center it */
+  position: relative; /* Keeps it within the normal layout */
+  width: 70%;
+  height: auto;
 }
 
 .interviewWrapper {
@@ -50,12 +50,11 @@
 
 .mainChatContainer {
   display: flex;
-  position: absolute;
-  top: 15%;
-  right: 11%;
+  position: relative; /* Change from absolute */
   width: 75%;
-  height: 60%;
+  height: auto; /* Ensure dynamic height */
   border: #cdc9c8 solid 1px;
+  z-index: 10;
 }
 
 .chatBox {
@@ -66,6 +65,7 @@
   width: 75%;
   height: 8%;
   border: #cdc9c8 solid 1px;
+  z-index: 10;
 }
 
 .submitButton {

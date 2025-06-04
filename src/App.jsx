@@ -12,8 +12,10 @@ function App() {
     <div className={styles.backContainer}>
       <Navbar />
       <SecondNavbar />
-      <Aicontainer />
-      <Footer/>
+      <div className={styles.mainContent}>
+        <Aicontainer />
+      </div>
+      <Footer />
     </div>
   );
 }
