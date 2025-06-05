@@ -1,13 +1,13 @@
 .MainDiv {
   background-color: white;
   display: flex;
-  position: fixed;
+  position: relative; /* Prevents overlapping issues */
   top: 5%;
   width: 70%;
   height: 10%;
-  left: 0%;
-  /* border: #0073cf solid 2px; */
-  left: 15%;
+  left: 50%;
+  transform: translateX(-50%); /* Ensures true centering */
+  align-items: center;
 }
 
 a {
@@ -15,24 +15,19 @@ a {
 }
 
 .logo {
-  background-color: white;
-  display: flex;
-  position: fixed;
-  left: 1%;
+  position: relative; /* Keeps it properly inside navbar */
   height: 85px;
   width: 300px;
-  left: 16%;
+  margin-left: 20px;
 }
 
 .navlinks {
-    text-decoration: none;
-  background-color: white;
+  margin-top: 110px; /* Adjust spacing above nav links */
   display: flex;
-  margin-left: 70%;
-  width: 100%;
-  justify-content: space-between;
-  padding-right: 10px;
+  justify-content: space-around; /* Even spacing */
   align-items: center;
+  width: 100%;
+  padding: 0 20px; /* Consistent spacing */
 }
 
 .contact {

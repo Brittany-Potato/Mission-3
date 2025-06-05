@@ -1,33 +1,37 @@
 /* footer.module.css */
 .mainContainer {
-  background-color: #f2f2f2;
-  color: #000;
-  padding: 40px;
+  background-color: rgb(156, 155, 155); 
+  color: white;
+  padding: 20px 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Ensures even spacing */
   flex-wrap: wrap;
-  width: 100%;
   border-top: 1px solid #ccc;
   font-family: Arial, sans-serif;
+  width: 70%; /* Matches Turners main div */
+  margin: 0 auto; /* Centers it */
+  max-height: 150px;
 }
 
 .footerColumn {
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  min-width: 150px;
+  margin: 20px; /* Increased spacing */
+  min-width: 180px; /* Better responsiveness */
 }
 
+
 .footerTitles {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1rem; /* Slightly larger for emphasis */
+  margin-bottom: 12px;
   font-weight: bold;
 }
 
 .aTag {
-  color: #003ea1;
-  margin-bottom: 5px;
+  color: white;
+  margin-bottom: 6px;
   text-decoration: none;
+  font-size: 1rem; /* Standard readability */
 }
 
 .aTag:hover {
