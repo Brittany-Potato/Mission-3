@@ -1,16 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./ai-container.module.css";
-import axios from 'axios';
+import axios from "axios";
 
 export default function AiContainer() {
   // variables for sessionID and job description
-  const [jobTitle, setJobTitle] = useState ("");
+  const [jobTitle, setJobTitle] = useState("");
   const [sessionIdInput, setSessionIdInput] = useState("");
   const [activeSessionId, setActiveSessionId] = useState(null);
 
   // variables for chat
   // Array of objects to contain chat, will use format needed for gemini API
-  const [sessionChat, setSessionChat] = useState ([]);
+  const [sessionChat, setSessionChat] = useState([]);
   // users message to chat
   const [userMessageToChat, setUserMessageToChat] = useState("");
 
@@ -20,22 +20,25 @@ export default function AiContainer() {
 
   const scrollChatToCurrent = useRef(null);
 
-  const backendUrl = 'http://localhost:3000';
+  const backendUrl = "http://localhost:3000";
 
   // to scroll Chat to current message, useEffect will trigger whenever sessionChat changes:
-  useEffect(()=>{
+  useEffect(() => {
     if (scrollChatToCurrent.current) {
-      scrollChatToCurrent.current.scrollTop = scrollChatToCurrent.current.scrollHeight;
+      scrollChatToCurrent.current.scrollTop =
+        scrollChatToCurrent.current.scrollHeight;
     }
   }, [sessionChat]);
 
   //sessionChat is array of objects, converting to string of text for display, with names to show who's talking, uses format needed for gemini
   const formatChatForDisplay = () => {
-    return sessionChat.map(entry => {
-      const speaker = entry.role === 'user' ? 'You' : 'Interviewer';
-      return `${speaker}: ${entry.parts[0].text}`
-    }).join('\n\n')
-  }
+    return sessionChat
+      .map((entry) => {
+        const speaker = entry.role === "user" ? "You" : "Interviewer";
+        return `${speaker}: ${entry.parts[0].text}`;
+      })
+      .join("\n\n");
+  };
 
   //* ----------Connecting to the backend
 
@@ -51,7 +54,7 @@ export default function AiContainer() {
   // Starting new session, or continuing session
   const submitSessionId = async (e) => {
     e.preventDefault();
-    
+
     setIsLoading(true);
     setError(null);
     // fetch to load existing session or create new one
@@ -60,35 +63,41 @@ export default function AiContainer() {
     // if there's an old session to load will fetch, if not fetch to start a new session
     try {
       let response;
-      if (sessionIdToLoad){
-        response = await axios.get(`${backendUrl}/session?sessionId=${sessionIdToLoad}`);
-      }
-      else {
+      if (sessionIdToLoad) {
+        response = await axios.get(
+          `${backendUrl}/session?sessionId=${sessionIdToLoad}`
+        );
+      } else {
         response = await axios.get(`${backendUrl}/session`);
       }
-    
-      const {sessionId: receivedSessionId, conversationHistory: loadedHistory} = response.data
+
+      const {
+        sessionId: receivedSessionId,
+        conversationHistory: loadedHistory,
+      } = response.data;
 
       setActiveSessionId(receivedSessionId);
       //loading history or empty array if it's a new session
       setSessionChat(loadedHistory || []);
-      
-      if(!sessionIdToLoad) {
-        alert(`New Interview Session Started: Your Session ID is: ${receivedSessionId}, please copy this down if you want to stop the session and resume at a later date.`);
-      }
-      else {
-        alert(`Your Session ${receivedSessionId} loaded, lets continue your interview.`);
+
+      if (!sessionIdToLoad) {
+        alert(
+          `New Interview Session Started: Your Session ID is: ${receivedSessionId}, please copy this down if you want to stop the session and resume at a later date.`
+        );
+      } else {
+        alert(
+          `Your Session ${receivedSessionId} loaded, lets continue your interview.`
+        );
       }
 
       setSessionIdInput("");
-    }
-    catch(err) {
+    } catch (err) {
       console.error("Error starting/loading session:", err);
-      let messageToDisplay
-      if(err.response && err.response.status === 404){
-        messageToDisplay = "Session ID not found. Please Check the ID you input and try again or start a new session";
-      }
-      else {
+      let messageToDisplay;
+      if (err.response && err.response.status === 404) {
+        messageToDisplay =
+          "Session ID not found. Please Check the ID you input and try again or start a new session";
+      } else {
         messageToDisplay = "Failed to start session. Please try again";
       }
       alert(messageToDisplay);
@@ -96,29 +105,31 @@ export default function AiContainer() {
 
       setActiveSessionId(null);
       setSessionChat([]);
-    }
-    finally {
+    } finally {
       setIsLoading(false);
     }
   };
 
-
-
   //* ------------Handles the submit button and sends data to the textarea
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null)
+    setError(null);
 
     // In case user hasnt done step 1, start/load session
-    if(!activeSessionId) {
+    if (!activeSessionId) {
       const messageToDisplay = "Please start or load a session first.";
       setError(messageToDisplay);
       alert(messageToDisplay);
       return;
     }
     // in case no user message, no job title, no chat
-    if(!userMessageToChat.trim() && !jobTitle.trim() && sessionChat.length === 0) {
-      const messageToDisplay = "Please enter a jobtitle, and message to the interviewer to carry on the session.";
+    if (
+      !userMessageToChat.trim() &&
+      !jobTitle.trim() &&
+      sessionChat.length === 0
+    ) {
+      const messageToDisplay =
+        "Please enter a jobtitle, and message to the interviewer to carry on the session.";
       setError(messageToDisplay);
       alert(messageToDisplay);
       return;
@@ -126,8 +137,11 @@ export default function AiContainer() {
 
     setIsLoading(true);
 
-    //formatting message for backend  
-    const newUserMessage = {role: "user", parts: [{text: userMessageToChat}] };
+    //formatting message for backend
+    const newUserMessage = {
+      role: "user",
+      parts: [{ text: userMessageToChat }],
+    };
     //updating chat with users message straight away (apparently this is called an 'optimistic update')
     const updatedChat = [...sessionChat, newUserMessage];
 
@@ -138,31 +152,28 @@ export default function AiContainer() {
       const response = await axios.post(`${backendUrl}/chat`, {
         sessionId: activeSessionId,
         contents: updatedChat,
-        jobTitle: jobTitle
+        jobTitle: jobTitle,
       });
 
       const aiResponse = response.data.aiResponse;
 
-      setSessionChat(prevChat => [
+      setSessionChat((prevChat) => [
         ...prevChat,
-        {role: 'model', parts: [{text: aiResponse}]}
-      ])
-    }
-    catch (err) {
+        { role: "model", parts: [{ text: aiResponse }] },
+      ]);
+    } catch (err) {
       console.error("Error sending message:", err);
-      const messageToDisplay = 'Failed to get an AI response, please try again.';
+      const messageToDisplay =
+        "Failed to get an AI response, please try again.";
       setError(messageToDisplay);
       alert(messageToDisplay);
-      //if submit fails, changes back session chat to what it was before attempted latest message. 
-      setSessionChat(sessionChat)
-    }
-    finally {
+      //if submit fails, changes back session chat to what it was before attempted latest message.
+      setSessionChat(sessionChat);
+    } finally {
       setIsLoading(false);
       setUserMessageToChat("");
     }
   };
-
-  
 
   return (
     //* ~~~~~~~~~~| Outside container |~~~~~~~~~~~~~
@@ -194,34 +205,47 @@ export default function AiContainer() {
             readOnly
             rows={15}
             cols={60}
-            placeholder={activeSessionId ? "Type response below..." : "To resume your session put your session ID in the Session ID input box. To start a new session leave the session ID blank"}
+            placeholder={
+              activeSessionId
+                ? "Type response below..."
+                : "To resume your session put your session ID in the Session ID input box. To start a new session leave the session ID blank"
+            }
           ></textarea>
 
           <input
             type="text"
             className={styles.chatBox}
-            placeholder={activeSessionId ? "Write message here" : "Start  new Session First"}
+            placeholder={
+              activeSessionId
+                ? "Write message here"
+                : "Start  new Session First"
+            }
             onChange={(e) => setUserMessageToChat(e.target.value)}
-            value = {userMessageToChat}
+            value={userMessageToChat}
             disabled={isLoading || !activeSessionId}
           />
 
-          <button 
+          <button
             className={styles.submitButton}
             type="submit"
-            disabled={isLoading || !activeSessionId || !userMessageToChat.trim()}
-            >
+            disabled={
+              isLoading || !activeSessionId || !userMessageToChat.trim()
+            }
+          >
             {isLoading ? "Sending..." : "Submit Response"}
           </button>
         </form>
-        <p className={styles.currentID}>Session ID: {activeSessionId || "No Session"}</p>
-        <button 
-          className={styles.sessionIdSubmitButton} 
-          type="button" 
+        <p className={styles.currentID}>
+          Session ID: {activeSessionId || "No Session"}
+        </p>
+        <button
+          className={styles.sessionIdSubmitButton}
+          type="button"
           onClick={submitSessionId}
           disabled={isLoading || activeSessionId}
-          >
-            Start Session</button>
+        >
+          Start Session
+        </button>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@
 
 .footerTitles {
   display: flex;
-padding-top: ;
+/* padding-top: ; */
   margin-left: 15%;
   margin-top: 13%;
 }
@@ -37,10 +37,11 @@ padding-top: ;
 .financeAndInsuranceDiv {
   display: flex;
   position: absolute;
-  background-color: orange;
+  /* background-color: orange; */
   width: 25%;
   height: 80%;
   left: 25%;
+  flex-direction: column;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~|Search For div|~~~~~~~~~~~~~~~~~~~~ */
@@ -48,17 +49,19 @@ padding-top: ;
   display: flex;
   position: absolute;
   right: 25%;
-  background-color: blue;
+  /* background-color: blue; */
   width: 25%;
   height: 80%;
+  flex-direction: column;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~|About Us div|~~~~~~~~~~~~~~~~~~~~ */
 .aboutUsDiv {
   display: flex;
   position: absolute;
-  background-color: green;
+  /* background-color: green; */
   width: 25%;
   height: 80%;
   right: 0%;
+  flex-direction: column;
 }
